@@ -84,12 +84,9 @@ public class UCropActivity extends AppCompatActivity {
     private int mStatusBarColor;
     private int mActiveWidgetColor;
     private int mToolbarWidgetColor;
-    @ColorInt
-    private int mRootViewBackgroundColor;
-    @DrawableRes
-    private int mToolbarCancelDrawable;
-    @DrawableRes
-    private int mToolbarCropDrawable;
+    @ColorInt private int mRootViewBackgroundColor;
+    @DrawableRes private int mToolbarCancelDrawable;
+    @DrawableRes private int mToolbarCropDrawable;
     private int mLogoColor;
 
     private boolean mShowBottomControls;
@@ -319,9 +316,9 @@ public class UCropActivity extends AppCompatActivity {
         toolbar.setBackgroundColor(mToolbarColor);
         toolbar.setTitleTextColor(mToolbarWidgetColor);
 
-//        final TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-//        toolbarTitle.setTextColor(mToolbarWidgetColor);
-//        toolbarTitle.setText(mToolbarTitle);
+        final TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        toolbarTitle.setTextColor(mToolbarWidgetColor);
+        toolbarTitle.setText(mToolbarTitle);
 
         // Color buttons inside the Toolbar
         Drawable stateButtonDrawable = ContextCompat.getDrawable(this, mToolbarCancelDrawable).mutate();
@@ -331,8 +328,7 @@ public class UCropActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-//            actionBar.setDisplayShowTitleEnabled(false);
+            actionBar.setDisplayShowTitleEnabled(false);
         }
     }
 
