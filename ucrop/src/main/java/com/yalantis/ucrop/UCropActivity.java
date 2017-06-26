@@ -319,9 +319,9 @@ public class UCropActivity extends AppCompatActivity {
         toolbar.setBackgroundColor(mToolbarColor);
         toolbar.setTitleTextColor(mToolbarWidgetColor);
 
-        final TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        toolbarTitle.setTextColor(mToolbarWidgetColor);
-        toolbarTitle.setText(mToolbarTitle);
+//        final TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+//        toolbarTitle.setTextColor(mToolbarWidgetColor);
+//        toolbarTitle.setText(mToolbarTitle);
 
         // Color buttons inside the Toolbar
         Drawable stateButtonDrawable = ContextCompat.getDrawable(this, mToolbarCancelDrawable).mutate();
