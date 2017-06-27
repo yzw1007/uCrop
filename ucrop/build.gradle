@@ -27,13 +27,12 @@ android {
     }
     resourcePrefix 'ucrop_'
 
-
-    /*sourceSets.main {
+    sourceSets.main {
         jni.srcDirs = [];
-    }*/
+    }
 
-   /* productFlavors {
-    }*/
+    productFlavors {
+    }
 }
 
 dependencies {
