@@ -32,8 +32,8 @@ android {
         jni.srcDirs = [];
     }*/
 
-    productFlavors {
-    }
+   /* productFlavors {
+    }*/
 }
 
 dependencies {
