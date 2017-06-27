@@ -29,13 +29,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okio.BufferedSource;
-import okio.Okio;
-import okio.Sink;
-
 /**
  * Creates and returns a Bitmap for a given Uri(String url).
  * inSampleSize is calculated based on requiredWidth property. However can be adjusted if OOM occurs.
@@ -163,14 +156,14 @@ public class BitmapLoadTask extends AsyncTask<Void, Void, BitmapLoadTask.BitmapW
     private void processInputUri() throws NullPointerException, IOException {
         String inputUriScheme = mInputUri.getScheme();
         Log.d(TAG, "Uri scheme: " + inputUriScheme);
-        if ("http".equals(inputUriScheme) || "https".equals(inputUriScheme)) {
+        /*if ("http".equals(inputUriScheme) || "https".equals(inputUriScheme)) {
             try {
                 downloadFile(mInputUri, mOutputUri);
             } catch (NullPointerException | IOException e) {
                 Log.e(TAG, "Downloading failed", e);
                 throw e;
             }
-        } else if ("content".equals(inputUriScheme)) {
+        } else */if ("content".equals(inputUriScheme)) {
             String path = getFilePath();
             if (!TextUtils.isEmpty(path) && new File(path).exists()) {
                 mInputUri = Uri.fromFile(new File(path));
@@ -228,7 +221,7 @@ public class BitmapLoadTask extends AsyncTask<Void, Void, BitmapLoadTask.BitmapW
         }
     }
 
-    private void downloadFile(@NonNull Uri inputUri, @Nullable Uri outputUri) throws NullPointerException, IOException {
+    /*private void downloadFile(@NonNull Uri inputUri, @Nullable Uri outputUri) throws NullPointerException, IOException {
         Log.d(TAG, "downloadFile");
 
         if (outputUri == null) {
@@ -266,7 +259,7 @@ public class BitmapLoadTask extends AsyncTask<Void, Void, BitmapLoadTask.BitmapW
             // (cropped image will override it later)
             mInputUri = mOutputUri;
         }
-    }
+    }*/
 
     @Override
     protected void onPostExecute(@NonNull BitmapWorkerResult result) {
