@@ -28,7 +28,7 @@ android {
     resourcePrefix 'ucrop_'
 
     sourceSets.main {
-        jni.srcDirs = [];
+        //jni.srcDirs = [];
     }
 
     productFlavors {
